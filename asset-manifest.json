@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/portNit/static/css/main.06a22eb0.css",
+    "main.js": "/portNit/static/js/main.13ebde79.js",
+    "static/js/453.1407b060.chunk.js": "/portNit/static/js/453.1407b060.chunk.js",
+    "index.html": "/portNit/index.html",
+    "static/media/code-solid.svg": "/portNit/static/media/code-solid.41e8931a0303e0fb9b37.svg",
+    "main.06a22eb0.css.map": "/portNit/static/css/main.06a22eb0.css.map",
+    "main.13ebde79.js.map": "/portNit/static/js/main.13ebde79.js.map",
+    "453.1407b060.chunk.js.map": "/portNit/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.06a22eb0.css",
+    "static/js/main.13ebde79.js"
+  ]
+}
