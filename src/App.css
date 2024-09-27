@@ -1,38 +1,439 @@
+/* Global Styles */
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  width: 100%;
+  background: linear-gradient(to bottom, #090e13 0%, rgb(10, 10, 10) 100%);
+
+  /* min-height: 100vh; */
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.InnerBox {
+  flex-direction: column;
+  max-width: 1400px;
+  display: flex;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.mainBody {
+  margin-top: 50px;
+  gap: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.header {
+  z-index: 999999;
+  background-color: #090e13;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+.navLinks2 {
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.navLink {
+  /* background-color: #101010; */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(37, 37, 37, 0);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s ease-in-out !important;
+}
+
+.navLink:hover {
+  color: #ffffff;
+  background-color: #1199ce;
+  box-shadow: 0px 0px 20px #43b7fa;
+  border: 1px solid #2faef8;
+}
+
+.horizontal-menu {
+  position: fixed;
+  display: none;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #090e13;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  z-index: 999998;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%); /* Start off-screen */
+}
+.custom-cursor{
+  cursor: url('/public/assets/code-solid.svg'),auto;
+}
+
+.horizontal-menu.active {
+  transform: translateX(0); /* Slide in */
+}
+
+.menu-icon {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+.close-icon {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  align-self: flex-end; /* Align close icon to the right */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 530px) {
+  .horizontal-menu{
+    display: flex;
+  }
+  .navLinks {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block; 
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.portfolioTitle2 {
+  font-family: "poppins";
+  font-weight: 400;
+  text-shadow: 0 0 20px #1199ced0 ;
+  color: #2dc4ff;
+  font-size: 9vw;
+  transition: 0.5s ease-in-out ;
+}
+.skillsSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ 
+  padding: 20px;
+  text-align: center;
+}
+
+.skillsIcons {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 20px; 
+  justify-items: center; 
+  margin: 0 auto; 
+}
+.skill {
+  gap: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: #fff;
+  transition: transform 0.8s !important;
+  transition: 0.4s ;
+}
+
+.skill:hover {
+  /* cursor: black; */
+  color: #ffffff;
+  background-color: #1199ce;
+  box-shadow: 0px 0px 20px #1199ce;
+  border: 1px solid #1199ce;
+  /* transform: scale(1.1); */
+}
+.Links{
+  gap: 20px;
+  display: flex;
+}
+
+.skillIcon {
+  font-size: 2rem;
+  color: #ffffff; /* Change the icon color if needed */
+}
+.skill:hover .skillIcon{
+  color: #ffffff !important; /* Change the icon color if needed */
+}
+
+.descText{
+  color: #ffffff;
+ font-weight: bolder;
+  font-family: monospace;
+  font-size: 34px;
+  margin-bottom: 40px;
+  transition: 0.3s ease-in-out; /* Smooth transition for the hover effect */
+}
+.descText2{
+ 
+  font-family: "poppins";
+  font-weight: 1000;
+  color: #e9e9e9;
+  font-size: 50px;
+  transition: 0.3s ease-in-out; /* Smooth transition for the hover effect */
+}
+
+/* .portfolioTitle2:hover {
+  text-shadow: 0 0 30px #1199ce;
+} */
+
+.portfolioBox h1 {
+  position: relative;
+  top: -4vw;
+  font-family: "poppins";
+
+  text-align: center;
+  color: #ffffff;
+  font-size: 10vw;
+  font-weight: 600;
+  transition: 0.5s ease-in-out; /* Smooth transition for the hover effect */
+  /* text-shadow: 0 0 30px #b6eaff6e; */
+}
+
+
+/* Main Body */
+.portfolioBox {
+  text-align: center;
+  border-radius: 20px;
+  min-height: 50vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+/* Footer */
+.footer {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(10, 10, 10);
+  color: white;
+  padding: 10px 0;
+  margin-top: 40px;
+  font-size: 1rem;
+}
+.Projects {
+  
+  display: grid;
+  width: 100%;
+  border-radius: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px; 
+  justify-items: center; 
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+  .Projects {
+    grid-template-columns: 1fr; 
+  }
+}
+.ProjectBox {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  border-radius: 5px;
+  width: 95%;
+  max-height: 500px;
+  height: 100vw;
+  border-top: 3px solid rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.397);
+  transition:  0.8s ease-in-out !important;
+  overflow: hidden; 
+}
+
+
+
+
+.LanguagesBar {
+  color: white;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.ProjectBox:hover{
+  color: #1199ce;
+  background-color: #1199ce;
+  border-top: 3px solid #1199ce;
+
+}
+.ProjectBox:hover .LanguagesBar {
+  opacity: 1;
+}
+
+
+
+.ProjectTitle{
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  font-family: "poppins";
+  font-weight: 900;
+  font-size: 25px;
+  color: white;
+}
+.info {
+  gap: 5%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(to top, rgba(7, 11, 12, 0.849) 0%, rgb(7, 8, 12) 100%);
+}
+.ProjectnavLink {
+
+  background-color: #10101086;
+  padding: 10px ;
+  border: 1px solid #ffffff00;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s ease-in-out;
+}
+.ProjectnavLink:hover {
+
+  color: #ffffff;
+  background-color: #1199ce;
+  box-shadow: 0px 0px 20px #1199ce;
+  border: 1px solid #1199ce;
+}
+
+.ProjectDesc{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: "poppins";
+  font-weight: 300;
+  font-size: 15px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 640px) {
+  .descText{
+    font-size: 20px;
+  }
+  .skillsIcons {
+    display: grid; /* Change to grid layout for smaller screens */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjusts the number of columns */
+    justify-items: center; /* Centers items within their grid cells */
+  }
+}
+.AboutSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.AboutHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.AboutHeader h2 {
+  font-family: "poppins";
+
+  color: white;
+}
+
+.AboutHeader p {
+  font-size: 18px;
+  color: #cccccc;
+  margin-top: 10px;
+}
+
+.AboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #e0e0e0;
+  line-height: 1.8;
+}
+
+.AboutText {
+  font-family: "poppins";
+  font-size: 15px;
+  text-align: justify;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.AboutText:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
 }
